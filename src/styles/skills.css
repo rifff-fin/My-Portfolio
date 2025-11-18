@@ -1,0 +1,137 @@
+/* ---------- Container ---------- */
+.skills-container {
+  padding: 5rem 2rem;
+  background: #000000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #FAF6F0;
+}
+
+/* ---------- Title ---------- */
+.skills-title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+
+  background: linear-gradient(
+    90deg,
+    #FAF6F0 0%,
+    #F4DFC8 50%,
+    #F4EAE0 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  letter-spacing: 1px;
+  margin-bottom: 3rem;
+}
+
+/* ---------- Grid ---------- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 2rem;
+  max-width: 1150px;
+  width: 100%;
+}
+
+/* ---------- Card ---------- */
+.skill-item {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 18px;
+  padding: 1.7rem;
+
+  border: 1px solid rgba(244, 223, 200, 0.15);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+
+  transition: all 0.35s ease;
+}
+
+.skill-item:hover {
+  transform: translateY(-10px);
+  border-color: rgba(244, 223, 200, 0.35);
+  box-shadow: 0 18px 40px rgba(244, 223, 200, 0.15);
+}
+
+/* ---------- Header ---------- */
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.skill-name {
+  color: #FAF6F0;
+  font-weight: 600;
+}
+
+.skill-percent {
+  font-weight: 700;
+  color: #F4DFC8;
+  font-size: 1.2rem;
+}
+
+/* ---------- Progress Bar ---------- */
+.progress-bar {
+  height: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  width: 0;
+  border-radius: 12px;
+
+  background: linear-gradient(
+    90deg,
+    #F4DFC8,
+    #F4EAE0,
+    #FAF6F0
+  );
+
+  transition: width 2.3s cubic-bezier(0.65, 0, 0.35, 1);
+  position: relative;
+}
+
+/* Soft shimmer */
+.progress::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+  transform: translateX(-100%);
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* ---------- Note ---------- */
+.skills-note {
+  margin-top: 3rem;
+  font-size: 0.95rem;
+  opacity: 0.8;
+  color: #F4EAE0;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+  .skills-title {
+    font-size: 2.4rem;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}

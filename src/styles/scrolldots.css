@@ -1,0 +1,17 @@
+.scroll-dots {
+  position: fixed;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  z-index:90;
+}
+.dot {
+  width:10px; height:10px; border-radius:50%;
+  background: rgba(255,255,255,0.08);
+  display:block; transition: all .25s ease;
+}
+.dot.active { transform: scale(1.4); background: linear-gradient(90deg,#2878ff,#00c8ff); box-shadow: 0 8px 24px rgba(40,120,255,0.14); }
+@media (max-width:720px) { .scroll-dots { right: 6px; } }

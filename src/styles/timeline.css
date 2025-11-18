@@ -1,0 +1,26 @@
+.timeline-wrap { padding: 3rem 1rem; display:flex; flex-direction:column; align-items:center; }
+.timeline-wrap h2 { margin-bottom:1rem; font-size:1.5rem; }
+.timeline { width:100%; max-width:920px; position:relative; padding-left:80px; }
+.timeline::before {
+  content: "";
+  position:absolute; left:40px; top:0; bottom:0; width:2px;
+  background: linear-gradient(180deg,#2878ff22,#00c8ff11); border-radius:2px;
+}
+.timeline-item { display:flex; gap:1rem; margin-bottom:1.6rem; align-items:flex-start; }
+.timeline-left { width:120px; text-align:right; padding-right:1rem; }
+.year { font-weight:700; color:var(--text-muted); }
+.timeline-right { flex:1; }
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+  padding:0.9rem; border-radius:12px; box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.card:hover { transform: translateY(-6px); box-shadow: 0 28px 60px rgba(0,0,0,0.7); }
+.card h4 { margin-bottom:0.35rem; }
+.card p { color:var(--text-muted); font-size:0.95rem; }
+
+/* small screens */
+@media (max-width:720px) {
+  .timeline { padding-left:20px; }
+  .timeline-left { display:none; }
+}
