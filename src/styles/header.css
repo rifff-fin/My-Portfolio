@@ -1,3 +1,9 @@
+:root {
+  --black: #000000;
+  --sand-dark: #F4DFC8;
+  --sand-mid: #F4EAE0;
+  --sand-light: #FAF6F0;
+}
 
 .header {
   position: fixed;
@@ -14,75 +20,92 @@
   backdrop-filter: blur(6px);
 }
 
-
 .logo {
+  display:flex;
+  align-items:center;
   font-weight: 800;
   padding-left: 10px;
   font-size: 1.05rem;
-  color: transparent;
-  background: linear-gradient(90deg,#2878ff,#00c8ff);
+  background: linear-gradient(90deg, var(--sand-dark), var(--sand-mid));
   -webkit-background-clip: text;
+  color: transparent;
 }
 
-.logo .dot { color: rgba(255,255,255,0.9); }
+.logo-icon {
+  margin-right: 6px;
+  color: var(--sand-light);
+}
 
 .hamburger {
-  width: 44px;
-  height: 44px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
   background: transparent;
   border: none;
   cursor: pointer;
-}
-.hamburger span {
-  display:block; width:22px; height:2px; background:var(--text-main); margin:3px 0; border-radius:2px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color: var(--sand-light);
 }
 
 .nav {
   position: fixed;
   right: 12px;
   top: 64px;
-  background: rgba(15,15,15,0.96);
+  background: rgba(15,15,15,0.9);
   border-radius: 10px;
   padding: 0.6rem;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  box-shadow: 0 10px 40px rgba(244,223,200,0.3);
   display: none;
   flex-direction: column;
   gap: 6px;
+  transition: all 0.3s ease;
 }
+
 .nav.open { display:flex; }
 
 .nav button {
+  display:flex;
+  align-items:center;
+  gap: 6px;
   background: transparent;
   border: none;
-  color: var(--text-main);
+  color: var(--sand-light);
   padding: 0.5rem 0.8rem;
   cursor: pointer;
   text-align: left;
-  width: 140px;
+  width: 160px;
   font-weight: 700;
+  border-radius: 8px;
+  transition: all 0.25s ease;
 }
-.nav button:hover { color: #4dafff; }
+
+.nav button:hover {
+  background: linear-gradient(90deg, var(--sand-dark), var(--sand-mid));
+  color: var(--black);
+  box-shadow: 0 0 8px var(--sand-mid);
+}
 
 /* larger screens: show nav inline */
 @media (min-width: 900px) {
-  .hamburger { 
-    display: none;
-    padding-right: 20px;
-  
-  }
+  .hamburger { display: none; }
   .nav {
     position: static;
     display:flex !important;
     flex-direction: row;
     gap: 1rem;
     background: transparent;
-    padding: 10px;
+    padding: 0;
     box-shadow: none;
   }
-  .nav button { width: auto; padding: 0;
-    padding-right: 10px; color: transparent;
-    font-weight:600; }
+  .nav button {
+    width: auto;
+    padding: 0;
+    color: var(--sand-light);
+    background: transparent;
+    font-weight:600;
+  }
+  .nav button:hover {
+    background: none;
+    color: var(--sand-mid);
+    box-shadow: none;
+  }
 }

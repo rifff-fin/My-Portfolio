@@ -1,0 +1,193 @@
+.floating-bot {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 200px;
+  height: 200px;
+  z-index: 9000;
+  pointer-events: auto;
+  background: transparent;
+  overflow: visible;
+  transition: transform 0.1s ease;
+}
+
+.floating-bot.draggable {
+  user-select: none;
+}
+
+/* Overlay matching exact background position - No pointer blocking */
+.floating-bot::before {
+  content: "riff";
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Clip the spline viewer to hide bottom 25% */
+.floating-bot spline-viewer {
+  width: 100%;
+  height: 100%;
+  clip-path: inset(0 0 28% 0);
+  -webkit-clip-path: inset(0 0 28% 0);
+  pointer-events: none;
+}
+
+/* Anime/Manga Style Speech Bubble - No pointer blocking */
+.speech-bubble {
+  position: absolute;
+  bottom: 105%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  color: #000000;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 3px solid #000000;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: pre-line;
+  text-align: center;
+  min-width: 150px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), inset 0 0 0 2px #ffffff;
+  animation: bubblePop 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 100;
+  pointer-events: none;
+}
+
+.speech-bubble-content {
+  position: relative;
+  z-index: 2;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
+/* Comic-style tail pointing to bot */
+.speech-bubble-tail {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 15px solid #000000;
+  z-index: 1;
+}
+
+.speech-bubble-tail::before {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 12px solid #ffffff;
+}
+
+@keyframes bubblePop {
+  0% {
+    transform: translateX(-50%) scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-50%) scale(1.05);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .speech-bubble {
+    font-size: 0.75rem;
+    padding: 0.6rem 0.8rem;
+    min-width: 120px;
+    border-width: 2.5px;
+  }
+
+  .speech-bubble-tail {
+    bottom: -12px;
+    border-left-width: 10px;
+    border-right-width: 10px;
+    border-top-width: 12px;
+  }
+
+  .speech-bubble-tail::before {
+    border-left-width: 7px;
+    border-right-width: 7px;
+    border-top-width: 10px;
+  }
+
+  .floating-bot {
+    width: 150px;
+    height: 150px;
+    bottom: 80px;
+    left: 10px;
+  }
+
+  .floating-bot::before {
+    height: 40%;
+  }
+
+  .floating-bot spline-viewer {
+    clip-path: inset(0 0 32% 0);
+    -webkit-clip-path: inset(0 0 32% 0);
+  }
+}
+
+@media (max-width: 480px) {
+  .speech-bubble {
+    font-size: 0.7rem;
+    padding: 0.5rem 0.7rem;
+    min-width: 100px;
+    border-width: 2px;
+  }
+
+  .speech-bubble-tail {
+    bottom: -10px;
+    border-left-width: 8px;
+    border-right-width: 8px;
+    border-top-width: 10px;
+  }
+
+  .speech-bubble-tail::before {
+    border-left-width: 6px;
+    border-right-width: 6px;
+    border-top-width: 8px;
+  }
+
+  .floating-bot {
+    width: 120px;
+    height: 120px;
+    bottom: 70px;
+    left: 10px;
+  }
+
+  .floating-bot::before {
+    height: 25%;
+  }
+
+  .floating-bot spline-viewer {
+    clip-path: inset(0 0 35% 0);
+    -webkit-clip-path: inset(0 0 35% 0);
+  }
+}

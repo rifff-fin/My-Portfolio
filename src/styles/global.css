@@ -1,55 +1,98 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Licorice&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Doto:wght@400&display=swap');
+/* Import design tokens */
+@import './vars.css';
 
-* { box-sizing: border-box; margin:0; padding:0; }  
-html, body, #root { height:100%; }
+/* Legacy color variables for compatibility */
+:root {
+  --black: var(--color-bg-pure);
+  --sand-dark: var(--color-primary);
+  --sand-mid: var(--color-text-secondary);
+  --sand-light: var(--color-text-primary);
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
 body {
   font-family: var(--font-main);
   background: var(--bg);
   color: var(--text-main);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
 }
 
-/* main area with scroll-snap */
+/* Main scroll area with smooth scroll + snap */
 .main-scroll {
   height: 100vh;
   overflow-y: auto;
   scroll-snap-type: y mandatory;
-  scroll-behavior:smooth;
+  scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
 }
 
-/* sections */
+/* Sections */
 main section {
   min-height: 100vh;
   scroll-snap-align: start;
-  display:flex;
+  display: flex;
   flex-direction: column;
-  align-items: center;  
-  align-items:center;
-  justify-content:center;
-  padding: 8px 8vw 4rem; /* top padding accounts for header */
+  align-items: center;
+  justify-content: center;
+  padding: 8px 8vw 4rem; /* top padding for fixed header */
 }
 
-/* links */
-a { color: inherit; }
-a:hover { opacity:0.95; }
+/* Links */
+a {
+  color: inherit;
+  transition: all 0.2s ease;
+}
+a:hover {
+  opacity: 0.95;
+  color: var(--sand-mid);
+}
 
-/* footer */
+/* Footer */
 .site-footer {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:1rem 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.2rem;
   color: var(--text-muted);
   background: rgba(8,8,8,0.65);
   border-top: 1px solid rgba(255,255,255,0.02);
 }
-.site-footer .footer-right { display:flex; gap:1rem; align-items:center; }
-.site-footer a { color: var(--text-main); text-decoration: none; font-weight:600; }
+.site-footer .footer-right {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.site-footer a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 600;
+}
 
-/* utility */
-.muted { color: var(--text-muted); }
+/* Utility */
+.muted {
+  color: var(--text-muted);
+}
+
+/* Scrollbar styling (optional for dark/sand theme) */
+.main-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+.main-scroll::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.02);
+}
+.main-scroll::-webkit-scrollbar-thumb {
+  background: var(--sand-mid);
+  border-radius: 4px;
+}
