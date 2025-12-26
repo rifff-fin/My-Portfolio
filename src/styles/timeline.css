@@ -15,7 +15,11 @@
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
   margin-bottom: var(--space-sm);
-  background: linear-gradient(135deg, var(--color-text-primary) 0%, var(--color-primary) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-text-primary) 0%,
+    var(--color-primary) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -40,7 +44,8 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(to bottom, 
+  background: linear-gradient(
+    to bottom,
     transparent,
     var(--color-border) 10%,
     var(--color-border) 90%,
@@ -207,5 +212,50 @@
 
   .timeline-card-title {
     font-size: 1.125rem;
+  }
+
+  .timeline-card-desc {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-wrapper {
+    padding: 2rem 1rem;
+  }
+
+  .timeline-line {
+    left: 16px;
+  }
+
+  .timeline-item-new {
+    margin-bottom: var(--space-lg);
+  }
+
+  .timeline-dot {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+  }
+
+  .timeline-year-badge {
+    font-size: 0.875rem;
+  }
+
+  .timeline-card {
+    padding: 0.75rem;
+  }
+
+  .timeline-card-title {
+    font-size: 1rem;
+  }
+
+  .timeline-card-desc {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .timeline-period {
+    font-size: 0.7rem;
   }
 }

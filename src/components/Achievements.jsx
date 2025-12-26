@@ -133,18 +133,6 @@ const achievements = [
     certificateUrl: null,
   },
   {
-    id: 9,
-    title: "Physics Olympiad Achievements 2019",
-    category: "Competition",
-    description:
-      "Multiple achievements in Physics Olympiad including medal, 3rd place, and competition honors",
-    date: "2019",
-    icon: Trophy,
-    certificateUrl: physicsOlympiadMedalImg,
-    physicsOlympiadAnotherImg,
-  },
-
-  {
     id: 14,
     title: "Autonomous Driving Car Project",
     category: "Project",

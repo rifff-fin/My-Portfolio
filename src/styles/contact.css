@@ -7,13 +7,13 @@
   color: var(--sand-light);
 }
 
-.contact-left, 
+.contact-left,
 .contact-right {
   flex: 1;
   padding: 1.5rem;
   border-radius: 14px;
-  background: rgba(255,255,255,0.03);
-  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
 
 .contact-left h2,
@@ -61,7 +61,7 @@
   padding: 0.9rem;
   border-radius: 10px;
   border: none;
-  background: rgba(255,255,255,0.04);
+  background: rgba(255, 255, 255, 0.04);
   color: var(--sand-light);
   font-size: 1rem;
 }
@@ -96,5 +96,93 @@
 @media (max-width: 780px) {
   .contact-section {
     flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+  }
+
+  .contact-left,
+  .contact-right {
+    padding: 1.2rem;
+  }
+
+  .contact-left h2,
+  .contact-right h2 {
+    font-size: 1.3rem;
+  }
+
+  .small-note {
+    font-size: 0.9rem;
+  }
+
+  .info-item {
+    font-size: 0.95rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .contact-form textarea {
+    min-height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    gap: 1rem;
+    padding: 1.5rem 0.8rem;
+    max-width: 100%;
+  }
+
+  .contact-left,
+  .contact-right {
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .contact-left h2,
+  .contact-right h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .small-note {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .info-list {
+    gap: 0.7rem;
+  }
+
+  .info-item {
+    font-size: 0.9rem;
+    gap: 0.5rem;
+  }
+
+  .contact-form {
+    gap: 0.7rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+
+  .contact-form textarea {
+    min-height: 100px;
+  }
+
+  .send-btn {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  .status {
+    font-size: 0.85rem;
   }
 }

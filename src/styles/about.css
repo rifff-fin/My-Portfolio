@@ -1,10 +1,10 @@
 :root {
   --black: #000000;
-  --sand-dark: #F4DFC8;
-  --sand-mid: #F4EAE0;
-  --sand-light: #FAF6F0;
-  --text-main: #FAF6F0;
-  --text-muted: #F4DFC8;
+  --sand-dark: #f4dfc8;
+  --sand-mid: #f4eae0;
+  --sand-light: #faf6f0;
+  --text-main: #faf6f0;
+  --text-muted: #f4dfc8;
 }
 
 /* Wrapper */
@@ -25,7 +25,7 @@
   padding: 3rem;
   border-radius: 22px;
   border: 1px solid rgba(244, 223, 200, 0.35);
-  box-shadow: 0 12px 36px rgba(0,0,0,0.7);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.7);
   color: var(--text-main);
 }
 
@@ -43,8 +43,12 @@
 }
 
 @keyframes spinIcon {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Text */
@@ -141,5 +145,106 @@
   }
   .stats-row {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-wrap {
+    padding: 2rem 1rem;
+  }
+
+  .about-card {
+    padding: 1.2rem;
+    border-radius: 14px;
+  }
+
+  .icon-spin {
+    font-size: 2rem;
+  }
+
+  .lead {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .stats-row {
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .stat-card {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .stat-card h1 {
+    font-size: 1.5rem;
+  }
+
+  .expertise-title {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  .expertise-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .expert-card {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-wrap {
+    padding: 1rem 0.5rem;
+    min-height: auto;
+  }
+
+  .about-card {
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .icon-spin {
+    font-size: 1.8rem;
+  }
+
+  .lead {
+    font-size: 0.9rem;
+    margin-top: 0.8rem;
+  }
+
+  .stat-card h1 {
+    font-size: 1.3rem;
+  }
+
+  .stat-card p {
+    font-size: 0.8rem;
+  }
+
+  .expertise-title {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+  }
+
+  .expert-card h4 {
+    font-size: 0.95rem;
+  }
+
+  .expert-card p {
+    font-size: 0.85rem;
+  }
+
+  .expert-card ul {
+    margin-top: 0.4rem;
+    padding-left: 0.8rem;
+  }
+
+  .expert-card li {
+    font-size: 0.8rem;
   }
 }

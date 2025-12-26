@@ -1,8 +1,8 @@
 :root {
   --black: #000000;
-  --sand-dark: #F4DFC8;
-  --sand-mid: #F4EAE0;
-  --sand-light: #FAF6F0;
+  --sand-dark: #f4dfc8;
+  --sand-mid: #f4eae0;
+  --sand-light: #faf6f0;
 }
 
 .header {
@@ -11,24 +11,31 @@
   left: 0;
   right: 0;
   height: 60px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 1rem;
   z-index: 80;
-  background: rgba(10,10,10,0.45);
+  background: rgba(10, 10, 10, 0.45);
   backdrop-filter: blur(6px);
 }
 
 .logo {
-  display:flex;
-  align-items:center;
+  display: flex;
+  align-items: center;
   font-weight: 800;
   padding-left: 10px;
   font-size: 1.05rem;
   background: linear-gradient(90deg, var(--sand-dark), var(--sand-mid));
   -webkit-background-clip: text;
   color: transparent;
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 0.85rem;
+    padding-left: 5px;
+  }
 }
 
 .logo-icon {
@@ -40,9 +47,9 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--sand-light);
 }
 
@@ -50,21 +57,23 @@
   position: fixed;
   right: 12px;
   top: 64px;
-  background: rgba(15,15,15,0.9);
+  background: rgba(15, 15, 15, 0.9);
   border-radius: 10px;
   padding: 0.6rem;
-  box-shadow: 0 10px 40px rgba(244,223,200,0.3);
+  box-shadow: 0 10px 40px rgba(244, 223, 200, 0.3);
   display: none;
   flex-direction: column;
   gap: 6px;
   transition: all 0.3s ease;
 }
 
-.nav.open { display:flex; }
+.nav.open {
+  display: flex;
+}
 
 .nav button {
-  display:flex;
-  align-items:center;
+  display: flex;
+  align-items: center;
   gap: 6px;
   background: transparent;
   border: none;
@@ -86,10 +95,12 @@
 
 /* larger screens: show nav inline */
 @media (min-width: 900px) {
-  .hamburger { display: none; }
+  .hamburger {
+    display: none;
+  }
   .nav {
     position: static;
-    display:flex !important;
+    display: flex !important;
     flex-direction: row;
     gap: 1rem;
     background: transparent;
@@ -101,7 +112,7 @@
     padding: 0;
     color: var(--sand-light);
     background: transparent;
-    font-weight:600;
+    font-weight: 600;
   }
   .nav button:hover {
     background: none;

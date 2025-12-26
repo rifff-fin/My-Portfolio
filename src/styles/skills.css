@@ -11,24 +11,36 @@
 }
 
 @keyframes smoothFade {
-  from { opacity: 0; transform: translateY(14px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes cardFade {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ---------- Main Container ---------- */
 .skills-container {
   padding: 3rem 1rem; /* reduced vertical and horizontal padding */
-  background:transparent;
+  background: transparent;
   min-height: 40vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #FAF6F0;
+  color: #faf6f0;
 }
 
 /* ---------- Title ---------- */
@@ -38,7 +50,7 @@
   text-align: center;
   margin-bottom: 1.6rem;
 
-  background: linear-gradient(90deg, #FAF6F0, #F4DFC8, #F4EAE0);
+  background: linear-gradient(90deg, #faf6f0, #f4dfc8, #f4eae0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -48,7 +60,10 @@
   width: 100%;
   max-width: 1100px; /* slightly narrower max width */
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* smaller min card width */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(240px, 1fr)
+  ); /* smaller min card width */
   gap: 1rem; /* tighter gaps */
 }
 
@@ -86,7 +101,7 @@
   font-size: 1.4rem; /* smaller title */
   font-weight: 700;
 
-  background: linear-gradient(90deg, #FAF6F0, #F4DFC8, #F4EAE0);
+  background: linear-gradient(90deg, #faf6f0, #f4dfc8, #f4eae0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -139,13 +154,13 @@
 }
 
 .skill-name {
-  color: #FAF6F0;
+  color: #faf6f0;
   font-weight: 600;
   font-size: 0.95rem;
 }
 
 .skill-percent {
-  color: #F4DFC8;
+  color: #f4dfc8;
   font-weight: 700;
   font-size: 0.95rem;
 }
@@ -162,7 +177,7 @@
   width: 0;
   border-radius: 8px;
 
-  background: linear-gradient(90deg, #F4DFC8, #F4EAE0, #FAF6F0);
+  background: linear-gradient(90deg, #f4dfc8, #f4eae0, #faf6f0);
   transition: width 1.6s cubic-bezier(0.65, 0, 0.35, 1);
   position: relative;
 }
@@ -182,60 +197,102 @@
 }
 
 @keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 /* ---------- Mobile ---------- */
 @media (max-width: 768px) {
   .skills-container {
-    padding: 2rem 0.8rem; /* reduced padding */
+    padding: 2rem 0.8rem;
   }
 
   .skills-title {
-    font-size: 1.8rem; /* smaller title */
+    font-size: 1.8rem;
     margin-bottom: 1.2rem;
   }
 
+  .skills-subtitle {
+    font-size: 0.95rem;
+  }
+
   .categories-wrapper {
-    grid-template-columns: 1fr; /* single column */
-    gap: 0.8rem; /* tighter gaps */
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
   }
 
   .category-block {
-    padding: 1rem; /* reduced padding */
+    padding: 1rem;
+    border-radius: var(--radius-lg);
   }
 
   .category-title {
-    font-size: 1.2rem; /* smaller title */
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
   }
 
   .skill-item {
-    padding: 0.8rem; /* reduced padding */
+    padding: 0.8rem;
+    border-radius: var(--radius-md);
   }
 
   .skill-name,
   .skill-percent {
-    font-size: 0.9rem; /* smaller text */
+    font-size: 0.9rem;
   }
-}   
+
+  .skill-bar {
+    height: 6px;
+  }
+}
+
 /* ---------- Extra Small Screens ---------- */
-@media (max-width: 480px) { 
+@media (max-width: 480px) {
   .skills-container {
-    padding: 1.5rem 0.6rem; /* further reduced padding */
+    padding: 1.5rem 0.6rem;
   }
 
   .skills-title {
-    font-size: 1.6rem; /* smaller title */
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .skills-subtitle {
+    font-size: 0.85rem;
     margin-bottom: 1rem;
   }
 
+  .categories-wrapper {
+    gap: 0.6rem;
+  }
+
+  .category-block {
+    padding: 0.8rem;
+    border-radius: var(--radius-md);
+  }
+
   .category-title {
-    font-size: 1.1rem; /* smaller title */
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .skill-item {
+    padding: 0.6rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: 0.6rem;
   }
 
   .skill-name,
   .skill-percent {
-    font-size: 0.85rem; /* smaller text */
+    font-size: 0.8rem;
   }
-} 
+
+  .skill-bar {
+    height: 5px;
+    border-radius: 3px;
+  }
+}

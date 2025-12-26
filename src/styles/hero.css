@@ -1,15 +1,16 @@
 :root {
   --black: #000000;
-  --sand-dark: #F4DFC8;
-  --sand-mid: #F4EAE0;
-  --sand-light: #FAF6F0;
+  --sand-dark: #f4dfc8;
+  --sand-mid: #f4eae0;
+  --sand-light: #faf6f0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   background: var(--black);
   color: var(--sand-light);
   overflow-x: hidden;
@@ -23,7 +24,7 @@ html, body {
   height: 100vh;
   text-align: center;
   color: var(--sand-light);
- 
+
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -84,23 +85,20 @@ html, body {
 .stars1 {
   top: 10%;
   left: 6%;
-  box-shadow: 20px 40px var(--sand-light),
-              80px 120px var(--sand-light),
-              140px 200px var(--sand-light);
+  box-shadow: 20px 40px var(--sand-light), 80px 120px var(--sand-light),
+    140px 200px var(--sand-light);
 }
 
 .stars2 {
   top: 30%;
   left: 60%;
-  box-shadow: 50px 80px var(--sand-light),
-              120px 160px var(--sand-light);
+  box-shadow: 50px 80px var(--sand-light), 120px 160px var(--sand-light);
 }
 
 .stars3 {
   top: 70%;
   left: 40%;
-  box-shadow: 60px 90px var(--sand-light),
-              160px 220px var(--sand-light);
+  box-shadow: 60px 90px var(--sand-light), 160px 220px var(--sand-light);
 }
 
 /* Blobs */
@@ -161,12 +159,12 @@ html, body {
 
 /* Fonts */
 .inter {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 900;
 }
 
 .doto {
-  font-family: 'Doto', sans-serif;
+  font-family: "Doto", sans-serif;
 }
 
 /* Titles and Description */
@@ -191,7 +189,7 @@ html, body {
   width: 280px;
   height: 320px;
   overflow: hidden;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
 }
@@ -207,7 +205,11 @@ html, body {
   bottom: 0;
   height: 40%;
   width: 100%;
-  background: linear-gradient(to bottom, rgba(5,5,7,0) 0%, var(--black) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 5, 7, 0) 0%,
+    var(--black) 100%
+  );
 }
 
 .hero-name {
@@ -291,11 +293,95 @@ html, body {
   .hero-title {
     font-size: 2rem;
   }
+
+  .hero-sub {
+    font-size: 0.95rem;
+    max-width: 600px;
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
 }
 
 @media (max-width: 600px) {
   .hero-alias {
     font-size: 0.9rem;
   }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-sub {
+    font-size: 0.85rem;
+    max-width: 90vw;
+    padding: 0 1rem;
+  }
+
+  .photo-wrapper {
+    width: 150px;
+    height: 200px;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .hero-ctas {
+    gap: 0.7rem;
+    margin-top: 1rem;
+  }
+
+  .bg-text {
+    font-size: clamp(2rem, 15vw, 6rem);
+  }
 }
-  
+
+@media (max-width: 480px) {
+  .hero-wrap {
+    padding: 4rem 1rem 2rem;
+  }
+
+  .hero-inner {
+    gap: 1rem;
+  }
+
+  .hero-title {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+  }
+
+  .hero-alias {
+    font-size: 0.8rem;
+  }
+
+  .hero-name {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .hero-sub {
+    font-size: 0.75rem;
+    max-width: 85vw;
+    line-height: 1.5;
+  }
+
+  .photo-wrapper {
+    width: 120px;
+    height: 160px;
+  }
+
+  .btn {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.75rem;
+  }
+
+  .hero-ctas {
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+    flex-wrap: wrap;
+  }
+}
