@@ -10,7 +10,9 @@
 }
 
 /* Reset */
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -29,6 +31,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 /* Main scroll area with smooth scroll + snap */
@@ -54,14 +59,18 @@ main section {
 /* Mobile section padding */
 @media (max-width: 768px) {
   main section {
-    padding: 8px 4vw 4rem;
+    padding: 8px 3vw 3rem;
     min-height: auto;
   }
 }
 
 @media (max-width: 480px) {
   main section {
-    padding: 8px 2vw 4rem;
+    padding: 8px 4vw 3rem;
+  }
+
+  body {
+    font-size: 16px;
   }
 }
 
