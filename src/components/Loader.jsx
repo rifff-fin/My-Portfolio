@@ -24,7 +24,7 @@ export default function Loader({ onComplete }) {
           // Wait a bit then restart
           setTimeout(startTyping, 500);
         }
-      }, 2500 / fullText.length); // Distribute over 4.5 seconds
+      }, 3500 / fullText.length); // Distribute over 4.5 seconds0 / fullText.length); // Distribute over 4.5 seconds
     };
 
     startTyping();
